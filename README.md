@@ -21,8 +21,8 @@ $ sudo nano /etc/supervisord.conf
 [include]
 files = /etc/supervisord/conf.d/*.conf
 ```
-* Create init script to run supervisor `/etc/init.d/supervisord`. An example running on AWS AMI [supervisord_start](/supervisord_startup)
-Here is a resource [init script](https://github.com/Supervisor/initscripts) for various Linux Distros 
+* Create init script to run supervisor `/etc/init.d/supervisord`. Script that I used running on AWS AMI [supervisord_start](/supervisord_startup). 
+Here is another resource [init script](https://github.com/Supervisor/initscripts) for various Linux Distros 
 * Make it executable
 
 ```shell
@@ -36,10 +36,9 @@ $ sudo chkconfig supervisord on
 * Create laravel worker file 
 `sudo nano /etc/supervisor/conf.d/laravel-worker.conf`
 * Add following contents to the worker file [laravel-worker.conf](/example.conf) 
-* 
-* Create **log file for supervisor** as > `touch /var/log/supervisor/supervisord.log` if not exist
+* Create **log file for supervisor** `touch /var/log/supervisor/supervisord.log` (if not exist)
 * **Restart** the supervisord `$ sudo supervisord restart`
-* **Reread** supervisorctl `$ sudo /usr/local/bin/supervisorctl reread`
+* **Reread** supervisorctl new program `$ sudo /usr/local/bin/supervisorctl reread`
 * **Update** supervisorctl `$ sudo /usr/local/bin/supervisorctl update` 
 * **Start** laravel-worker and any other workers as `$ sudo /usr/local/bin/supervisorctl start laravel-worker:*`
 * **Check status** whether workers are running as `$ sudo /usr/local/bin/supervisorctl status` 
