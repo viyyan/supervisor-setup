@@ -34,7 +34,7 @@ $ sudo chkconfig supervisord on
 * Start supervisor 
 `$ sudo service supervisord start`
 * Create laravel worker file 
-`sudo nano /etc/supervisor/conf.d/laravel-worker.conf`
+`$ sudo nano /etc/supervisor/conf.d/laravel-worker.conf`
 * Add following contents to the worker file [laravel-worker.conf](/example.conf) 
 * Create **log file for supervisor** `touch /var/log/supervisor/supervisord.log` (if not exist)
 * **Restart** the supervisord `$ sudo supervisord restart`
