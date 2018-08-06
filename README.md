@@ -19,7 +19,7 @@ $ sudo mkdir /etc/supervisor/conf.d
 $ sudo nano /etc/supervisord.conf
 
 [include]
-files = /etc/supervisord/conf.d/*.conf
+files = /etc/supervisor/conf.d/*.conf
 ```
 * Create init script to run supervisor `/etc/init.d/supervisord`. Script that I used running on AWS AMI [supervisord_start](/supervisord_startup). 
 Here is another resource [init script](https://github.com/Supervisor/initscripts) for various Linux Distros 
